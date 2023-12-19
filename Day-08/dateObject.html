@@ -1,0 +1,27 @@
+<script>
+
+currentDate=new Date();
+preDate=new Date(2024,10,21,12,13,14);
+console.log(currentDate);
+console.log(currentDate.getHours());
+console.log(currentDate.getMinutes());
+console.log(currentDate.toDateString());
+console.log(currentDate.toTimeString());
+diff=currentDate-preDate;
+
+// console.log("milliseconds "+(diff));
+// console.log("seconds "+(diff/1000));
+
+console.log(
+    "years "+parseInt((((((diff/1000)/60)/60)/24)/30)/12)+
+    "months "+parseInt(((((diff/1000)/60)/60)/24)/30)+
+    "days "+parseInt((((diff/1000)/60)/60)/24)+
+    "hours "+parseInt(((diff/1000)/60)/60)+
+    "minutes "+parseInt((diff/1000)/60)
+    +"seconds "+parseInt((diff/1000))
+    +"Milliseconds "+ (diff%1000)
+    
+    )
+
+
+</script>

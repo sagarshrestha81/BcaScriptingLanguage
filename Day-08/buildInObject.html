@@ -1,0 +1,55 @@
+<script>
+
+obj1= {id:12,name:"ram",class:"4th sem"};
+obj2 ={roll:30,address:"koteshwor"}
+console.log(obj1);
+
+// Object
+Object.assign(obj2,obj1);
+console.log(obj2);
+
+// JSON
+data1= [1,3,4,5,6];
+data1=JSON.stringify(data1);
+console.log(data1);
+console.log(typeof data1);
+
+getDataFromString=JSON.parse(data1);
+console.log(getDataFromString);
+console.log(typeof getDataFromString);
+
+// Math
+pi= Math.PI;
+rand=Math.random();
+myval=324.532432432432432432432;
+myround=Math.round(myval);
+maiInt=parseInt(myval);
+
+console.log(pi);
+console.log(rand);
+console.log(myround);
+console.log(maiInt);
+
+// String
+mystr="    HELLO       world   ";
+console.log(mystr);
+console.log(mystr.length);
+console.log(mystr.trim());
+// console.log(mystr.toUpperCase());
+console.log(mystr.toLowerCase());
+
+// console
+
+console.log("print");
+console.error("this is error")
+console.warn("this is warning")
+
+
+
+
+
+
+
+
+
+</script>
