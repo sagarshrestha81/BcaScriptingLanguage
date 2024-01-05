@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form method="get" onsubmit="return false;">
+        <div class="form-controller">
+            <label for="fullname">fullname</label>
+            <input type="text" name="fullname" id="fullname">
+            <span id="fullname-err"></span>
+        </div>
+        <div class="form-controller">
+            <label for="email">email</label>
+            <input type="text" name="email" id="email">
+            <span id="email-err"></span>
+
+        </div>
+        <div class="form-controller">
+            <label for="password">password</label>
+            <input type="password" name="password" id="password">
+            <span id="password-err"></span>
+        </div>
+        <div class="form-controller">
+            <label for="gpa">gpa</label>
+            <input type="number" name="gpa" id="gpa">
+            <span id="gpa-err"></span>
+        </div>
+        <div class="form-controller">
+            <button type="submit" onclick="validation()">submit</button>
+            <button type="reset">reset</button>
+        </div>
+
+
+    </form>
+    <script>
+        function validation() {
+            err = "you need to fill this field";
+
+            fullnameErr = document.getElementById("fullname-err");
+            emailErr = document.getElementById("email-err");
+            passwordErr = document.getElementById("password-err");
+            gpaErr = document.getElementById("gpa-err");
+
+            fullnameErr.innerText =
+                emailErr.innerText =
+                passwordErr.innerText =
+                gpaErr.innerText = '';
+
+            fullname = document.getElementById("fullname").value;
+            email = document.getElementById("email").value;
+            password = document.getElementById("password").value;
+            gpa = document.getElementById("gpa").value;
+            isFullnameValidate =
+                isEmailValidate =
+                isPasswordValidate =
+                isGpaValidate =
+                false;
+            // Fullname validate
+            if (fullname == '') {
+                fullnameErr.innerText = err;
+            } else {
+                isFullnameValidate = true;
+            }
+
+            // email validate
+            if (email == '') {
+                emailErr.innerText = err;
+            } else {
+                isEmailValidate = true;
+            }
+
+            // password validate
+            if (password == '') {
+                passwordErr.innerText = err;
+            } else if (password.length < 8) {
+                passwordErr.innerText = "password length more then 8";
+
+            } else {
+                isPasswordValidate = true;
+            }
+
+            // gpa validate
+            if (gpa == '') {
+                gpaErr.innerText = err;
+            } else if (gpa > 4 || gpa < 0) {
+                gpaErr.innerText = "gpa must be between 0 to 4";
+
+            } else {
+                isGpaValidate = true;
+            }
+
+            if (isFullnameValidate &&
+                isEmailValidate &&
+                isPasswordValidate &&
+                isGpaValidate) {
+                    location.href = "https://google.com"
+
+            }
+
+
+
+        }
+    </script>
+</body>
+
+</html>
