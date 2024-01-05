@@ -1,0 +1,26 @@
+<script>
+    const name = "hari";
+    amount = 10000;
+    withdraw=50000;
+    console.log("AMOUNT : "+amount);
+    console.log("withdraw : "+withdraw);
+    try {
+      if(withdraw+100 >amount){
+        throw "You withdraw more then account"
+      }
+    
+        amount=amount-withdraw;
+
+
+
+    } catch (error) {
+        console.log("from catch");
+        console.log(error);
+    }finally{
+        console.log("tHANK YOU FOR USING ");
+
+    }
+    console.log("FINAL AMOUNT : "+amount);
+
+    console.log("test");
+</script>

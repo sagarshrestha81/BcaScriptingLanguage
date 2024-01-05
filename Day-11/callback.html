@@ -1,0 +1,23 @@
+<script>
+   promise=new Promise((resolve,error)=>{
+    setTimeout(()=>{
+    console.log("from api");
+    // resolve("voting");
+    error("server error");
+},4000);
+   });
+   
+   console.log("hello");
+   promise.then((result)=>{
+    console.log(result);
+    console.log("candidate")
+
+   
+}).catch((err)=>{
+       console.log("err"+err)
+
+   })
+  
+
+
+</script>

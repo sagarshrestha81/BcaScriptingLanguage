@@ -1,0 +1,102 @@
+<style>
+    p {
+        color: #ff0000;
+    }
+
+    .error {
+        display: none;
+    }
+</style>
+
+<input type="text" id="username" placeholder="username" onkeyup="checkUsername()">
+<input type="email" id="email" placeholder="email">
+<input type="text" id="password" placeholder="password" onkeyup="checkPassword()">
+<p id="out"></p>
+<p id="case" class="error">password Uppercase</p>
+<p id="length" class="error">pasword length more then 8</p>
+<p id="symbol" class="error">pasword Symbol</p>
+<p id="number" class="error">pasword number</p>
+
+
+<script>
+regex = /sag/g
+name="sagar id ID SAG"
+
+regex.test(name)
+
+
+
+
+
+
+
+    out = document.getElementById('out');
+
+    function checkUsername() {
+        username = document.getElementById("username").value;
+        if (username) {
+            out.innerHTML = "";
+        } else {
+            out.innerHTML = "username not define";
+        }
+    }
+
+    function checkPassword() {
+        document.getElementById("case").style.display = 'block';
+        document.getElementById("length").style.display = 'block';
+        document.getElementById("symbol").style.display = 'block';
+        document.getElementById("number").style.display = 'block';
+        username = document.getElementById("username").value;
+        password = document.getElementById("password").value;
+        userRegex = new RegExp(username, "gi");
+
+        console.log(userRegex);
+        capitalRegex = /[A-Z]/g;
+        symbolRegex = /[!@#$%^&*()_+]/g;
+        numberRegex = /[0-9]/g;
+        if (username) {
+            out.innerHTML = "";
+            // Password Length
+            if (password.length >= 8) {
+                document.getElementById("length").style.color = '#00ff00';
+                document.getElementById("length").innerHTML = "<del>pasword length more then 8</del>";
+            } else {
+                document.getElementById("length").style.color = '#ff0000';
+                document.getElementById("length").innerHTML = "<span>pasword length more then 8</span>";
+            }
+            // Capital letter check
+
+            if (capitalRegex.test(password)) {
+                document.getElementById("case").style.color = '#00ff00';
+            } else {
+                document.getElementById("case").style.color = '#ff0000';
+            }
+            // Symbol letter check
+
+            if (symbolRegex.test(password)) {
+                document.getElementById("symbol").style.color = '#00ff00';
+            } else {
+                document.getElementById("symbol").style.color = '#ff0000';
+            }
+            // Number letter check
+
+            if (numberRegex.test(password)) {
+                document.getElementById("number").style.color = '#00ff00';
+            } else {
+                document.getElementById("number").style.color = '#ff0000';
+            }
+            // UserName letter check
+
+            if (userRegex.test(password)) {
+                out.innerHTML = "you can't put username as password";
+            } else {
+                out.innerHTML = "";
+            }
+
+        } else {
+            out.innerHTML = "username not define";
+        }
+
+
+    }
+</script>
