@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    welcome <span id="out"></span>
+    <form action="" name="myform" onsubmit="return false;">
+        <input type="text" name="username" placeholder="name">
+        <button onclick="sub()">submit</button>
+
+    </form>
+    <button onclick="del()">delete</button>
+
+    <script>
+       
+
+        function sub() {
+
+            username = document.myform.username.value;
+            console.log(username);
+
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", "ram@gmail.com");
+            refresh();
+
+        }
+        function del(){
+            // localStorage.removeItem("username");
+            localStorage.clear();
+        }
+
+        function refresh() {
+            if (localStorage.getItem("username")) {
+                document.getElementById('out').innerHTML = localStorage.getItem("username");
+            }
+        }
+        refresh();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="createCookie()">create</button>
+
+
+    <script>
+// str="hello i-am computer";
+// console.log(str);
+// strArray=str.split("-");
+// console.log(strArray);
+// substr=str.substring(0,8);
+// console.log(substr);
+function createCookie(){
+    var date = new Date();
+    console.log(date.getTime());
+    date.getTime(date.getTime() + (1 * 1 * 1 * 1 * 5000)); 
+
+    document.cookie = "name=sagar";
+    document.cookie = "lastname=shrestha";
+    document.cookie = "profile=hello";
+    document.cookie = "name=ravi";
+    document.cookie = "path=/Day-14/test; expires=" + date.toUTCString();
+}
+
+// console.log(document.cookie);
+
+str=document.cookie;
+// console.log(str);
+strArr=str.split("; ");
+// console.log(strArr);
+res=false;
+function getCookie(key){
+
+    strArr.forEach(element => {
+        if(element.substr(0,key.length) == key){
+         console.log(element.substr(key.length +1));
+        // return element;
+     }
+    });   
+
+
+}
+
+console.log(getCookie("profile"))
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
