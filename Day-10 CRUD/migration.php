@@ -14,7 +14,7 @@ if($conn){
        echo "Database Created <br>";
        $conn=new mysqli($localhost,$username,$password,$database);
        if($conn){
-           echo "Database Connected <br>";
+           echo "Database Connected success<br>";
            $sql ="CREATE TABLE productss
            (
            product_id INT AUTO_INCREMENT PRIMARY KEY,
