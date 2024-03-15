@@ -55,6 +55,7 @@ print_r($data);
                 <th>Stock</th>
                 <th>Image</th>
                 <th>Updated</th>
+                <th>Action</th>
             </tr>
             <?php if($data->num_rows > 0){
                 while($row =mysqli_fetch_assoc($data)){
@@ -71,6 +72,10 @@ print_r($data);
                    <td><?php echo $row['product_stock']?></td>
                    <td><img src="../assets/images/uploads/<?php echo $row['product_image']?>"/></td>
                    <td><?php echo $row['product_updated_date']?></td>
+                   <td>
+                    <a href="./editProduct.php?uid=<?php echo $row['product_uid']?>">Edit</a>
+                    <button>Delete</button>
+                   </td>
            
             </tr>
             <?php

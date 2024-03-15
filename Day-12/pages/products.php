@@ -72,6 +72,10 @@ print_r($data);
                    <td><?php echo $row['product_stock']?></td>
                    <td><img src="../assets/images/uploads/<?php echo $row['product_image']?>"/></td>
                    <td><?php echo $row['product_updated_date']?></td>
+                   <td>
+                    <a href="">Edit</a>
+                    <button>Delete</button>
+                   </td>
            
             </tr>
             <?php
