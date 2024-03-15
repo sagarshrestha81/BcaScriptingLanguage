@@ -22,7 +22,21 @@ require_once "./../layouts/header.php";
 $sql = "SELECT * FROM productss";
 $data = $conn->query($sql);
 
-print_r($data);
+if (isset($_POST['delete'])) {
+    $uid = $_POST['delete'];
+    $deletesql = "DELETE FROM productss WHERE product_uid='$uid'";
+
+    if ($conn->query($deletesql)) {
+        echo "delete success";
+        $sql = "SELECT * FROM productss";
+        $data = $conn->query($sql);
+
+    } else {
+
+        echo "delete failed";
+    }
+}
+
 
 ?>
 
