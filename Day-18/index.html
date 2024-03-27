@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, vel!</p>
+    <button id="btn">click me</button>
+    <button id="btn-2">click me 2</button>
+    <button class="btn-2">hover me</button>
+<script src="./jquery.js"></script>
+<script>
+ 
+ $("#btn,#btn-2").click(function(){
+alert();
+ })
+ 
+$(document).on("click mouseover","#btn , #btn-2",function(){
+    alert("click me");
+});
+
+
+
+    </script>
+ 
+</body>
+</html>
